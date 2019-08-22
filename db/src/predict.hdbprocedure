@@ -1,0 +1,14 @@
+PROCEDURE "PredictiveGraph.db::predict" (IN ForecastLength INTEGER)
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   AS
+BEGIN
+	upsert "PredictiveGraph.db::PAL.ParamsForecast" values ('ForecastLength', :ForecastLength, null, null) where "name" = 'ForecastLength';
+	delete from "PredictiveGraph.db::PAL.Forecast";
+	p1 = select * from "PredictiveGraph.db::PAL.Model";
+	p2 = select * from "PredictiveGraph.db::PAL.ParamsForecast";
+	call "PredictiveGraph.db::PALpredict" (:p1, :p2, :p3);                              
+	insert into "PredictiveGraph.db::PAL.Forecast" select * from :p3;
+END
+

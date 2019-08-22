@@ -1,0 +1,10 @@
+service namespace "PredictiveGraph.db" {
+    "PredictiveGraph.db::tables.IoT" as "IoT" 
+        create forbidden 
+        update forbidden 
+        delete forbidden;
+    "PredictiveGraph.db::PAL.Forecast" as "Forecast" 
+        create forbidden 
+        update forbidden 
+        delete forbidden;
+}

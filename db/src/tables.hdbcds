@@ -1,0 +1,13 @@
+namespace PredictiveGraph.db;
+
+context tables {
+    entity IoT {
+        key id               : Integer not null;
+            date             : LocalDate;
+            pHInput          : Double;
+            pHOutput         : Double;
+            TDSInput         : Double;
+            TDSOutput        : Double;
+            WaterConsumption : Double;
+    };
+};

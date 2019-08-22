@@ -1,0 +1,14 @@
+{
+	"area": "AFLPAL",
+	"function": "ARIMAFORECAST",
+	"parameters": [{
+		"type": "PredictiveGraph.db::PAL.TTModel",
+		"direction": "IN"
+	}, {
+		"type": "PredictiveGraph.db::PAL.TTParams",
+		"direction": "IN"
+	}, {
+		"type": "PredictiveGraph.db::PAL.TTForecast",
+		"direction": "OUT"
+	}]
+}

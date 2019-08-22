@@ -1,0 +1,14 @@
+{
+	"area": "AFLPAL",
+	"function": "AUTOARIMA",
+	"parameters": [{
+		"type": "PredictiveGraph.db::PAL.TTData",
+		"direction": "IN"
+	}, {
+		"type": "PredictiveGraph.db::PAL.TTParams",
+		"direction": "IN"
+	}, {
+		"type": "PredictiveGraph.db::PAL.TTModel",
+		"direction": "OUT"
+	}]
+}
